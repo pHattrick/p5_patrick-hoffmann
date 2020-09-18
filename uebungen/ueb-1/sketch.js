@@ -5,7 +5,6 @@ function setup() {
 
 function draw() {
   strokeWeight(1);
-  ellipse(160, 160, 320, 320);
-  ellipse(80, 160, 160, 160);
-  ellipse(240, 160, 160, 160);
+  triangle(160, 0, 0, 320, 320, 320);
+  rect(80, 80, 160, 160);
 }
