@@ -1,9 +1,11 @@
 function setup() {
-createCanvas(320, 320);
-background(200);
+createCanvas(400, 500);
+background(100);
 }
 
 function draw() {
-strokeWeight(1);
-rect(80, 80, 160, 160);
+background(220,0,200);
+
+  fill(100);
+  rect(200,250,150,150);
 }
