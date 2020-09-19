@@ -1,0 +1,19 @@
+function setup() {
+  createCanvas(800, 800);
+  noFill();
+  noLoop();
+}
+
+function draw() {
+
+  strokeWeight(12);
+
+  background(220);
+
+  for (let x = 0; x <= 10; x += 1) {
+    rect(25 * x + 25, 25 * x + 25, 500, 500);
+    console.log(x)
+  }
+
+
+}
