@@ -1,8 +1,8 @@
-let angle=0;
+let angle = 0;
 
 function setup() {
-	createCanvas(600, 600);
-	angleMode(DEGREES);
+  createCanvas(600, 600);
+  angleMode(DEGREES);
 
 
 }
@@ -10,21 +10,26 @@ function setup() {
 function draw() {
 
 
-	background(0,0,0,10);
-	noFill();
-	stroke(255);
-    rectMode(CENTER);//mit diesem Befehl wird das Rechteck von der Mitte her gezeichnet statt von der oberen linken Ecke
-
-    rect(width/2,height/2, 200,200);  
-  
-	push();
-	translate(width/2,height/2);
-	rotate(angle);
-	ellipse(200,0,100,100);
-	pop();
+  background(0, 0, 0, 10);
+  noFill();
+  stroke(255);
+  rectMode(CENTER); //mit diesem Befehl wird das Rechteck von der Mitte her gezeichnet statt von der oberen linken Ecke
 
 
 
+  push();
+  translate(width / 2, height / 2);
+  rotate(angle);
+  ellipse(200, 0, 100, 100);
+  pop();
 
-	angle=angle+1;
+  push();
+  translate(width / 2, height / 2);
+  rotate(angle);
+  rect(0, 0, 200, 200)
+  pop();
+
+
+
+  angle = angle + 3;
 }
