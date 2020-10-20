@@ -81,7 +81,7 @@ function draw() {
             // rect(x + 40, y + 90, 10, 40, 30);
 
 
-            for (let x = 1; x <= anz; x += 1) {
+            for (let x = 0; x <= anz; x += 0) {
               rect(distanz * x + distanz, distanz * x + distanz, breite, laenge,30);
 
             }
