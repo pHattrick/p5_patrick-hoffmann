@@ -81,7 +81,7 @@ function draw() {
             // rect(x + 40, y + 90, 10, 40, 30);
 
 
-            for (let x = 0; x <= anz; x += 0) {
+            for (let x = 1; x <= anz; x += 1) {
               rect(distanz * x + distanz, distanz * x + distanz, breite, laenge,30);
 
             }
@@ -90,5 +90,13 @@ function draw() {
               rect(distanz * y + distanz, distanz * y + distanz, breite, laenge,30);
               fill(14)
             }
+
+            // let stepsx = 40;
+            // let stepsy = 100;
+            //
+            // for (var x = 20; x < width; x += stepsx) {
+            //   for (var y = 120; y < height; y += stepsy) {
+
+
 
 }
