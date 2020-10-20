@@ -36,7 +36,9 @@ mouseX = background(0)
       rect(x + 20, y + 40, 10, 40, 30);
       rect(x + 40, y + 90, 10, 40, 30);
 
-
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
 
 
     }
