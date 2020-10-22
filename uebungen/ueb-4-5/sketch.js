@@ -1,8 +1,11 @@
 
 var gui;
 
-var stepsx = 40;
-var stepsy = 100;
+var anz = 100
+var anzahlX = Math.sqrt(anz)
+var anzahlY = Math.sqrt(anz)
+var stepsx = 20;
+var stepsy = 20;
 var laenge = 40;
 var breite = 10;
 
@@ -10,7 +13,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   gui = createGui('p5.gui');
-  gui.addGlobals('stepsx', 'stepsy', 'laenge', 'breite');
+  gui.addGlobals('anz', 'anzahlX', 'anzahlY', 'stepsx', 'stepsy', 'laenge', 'breite');
   noFill();
   noLoop();
 }
@@ -19,6 +22,7 @@ function draw() {
   background(255);
   strokeWeight(2);
   stroke(0);
+
 
 
       fill(220);
@@ -84,14 +88,25 @@ function draw() {
             // for (var x = 20; x < width; x += stepsx) {
             // for (var y = 120; y < height; y += stepsy) {
 
+            // for (let x = 0; x <= anz; x += 1) {
+            //   rect(stepsx * x + stepsx, stepsx * x + stepsx, breite, laenge,30);
+            // }
+            //
+            // for (let y = 0; y <= anz; y += 1) {
+            //   rect(stepsy * y + stepsy, stepsy * y + stepsy, breite, laenge,30);
+            //   fill(14)
+            // }
 
-            for (let x = 12; x <= stepsx; x += 1) {
-              rect(stepsx * x + stepsx, stepsx * x + x, breite, laenge,30);
+
+
+            for (let x = 0; x <= anz; x += 1) {
+              rect(stepsx * x + width/stepsx, stepsx * x + anzahlX, breite, laenge,30);
             }
 
-            for (let y = 12; y <= stepsy; y += 1) {
-              rect(stepsy * y + stepsy, stepsy * y + y, breite, laenge,30);
+            for (let y = 0; y <= anz; y += 1) {
+              rect(stepsy * y + height/stepsy, stepsy * y + anzahlY, breite, laenge,30);
               fill(14)
             }
+
 
 }
