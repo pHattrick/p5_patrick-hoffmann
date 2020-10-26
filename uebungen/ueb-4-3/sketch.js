@@ -1,3 +1,4 @@
+
 let key = '06e280b15621fb57f14de8e91c05e79e'; // https://weatherstack.com/product -- dein key!
 let windstaerke;
 let angle = 0;
@@ -16,13 +17,12 @@ var text
 
 
 
-
 function setup() {
   createCanvas(850, windowHeight);
 
-  let url = 'https://api.weatherstack.com/current?access_key=' + key + '&query=Zürich'; //Achtung gratis key unterstützt SSL nicht
+  let url = 'https://api.weatherstack.com/current?access_key=' + key + '&query=berlin'; //Achtung gratis key unterstützt SSL nicht
   loadJSON(url, gotWeather);
-  rectMode(CENTER);
+  // rectMode(CENTER);
   angleMode(DEGREES);
 
 
@@ -35,77 +35,63 @@ function setup() {
 }
 
 function draw() {
-  background(1);
+  background(15);
   strokeWeight(2);
   stroke(0);
 
+fill(220);
+noStroke();
+rect(100-80, 100, 200, 50, 30);
+ellipse(140-80, 100, 50)
+ellipse(170-80, 90, 50)
+ellipse(200-80, 80, 50)
+ellipse(230-80, 90, 50)
+ellipse(260-80, 100, 50)
 
+fill(200);
+noStroke();
+rect(100+40, 100, 200, 50, 30);
+ellipse(140+40, 100, 50)
+ellipse(170+40, 90, 50)
+ellipse(200+40, 80, 50)
+ellipse(230+40, 90, 50)
+ellipse(260+40, 100, 50)
 
+fill(180);
+noStroke();
+rect(100+40+120, 100, 200, 50, 30);
+ellipse(140+40+120, 100, 50)
+ellipse(170+40+120, 90, 50)
+ellipse(200+40+120, 80, 50)
+ellipse(230+40+120, 90, 50)
+ellipse(260+40+120, 100, 50)
 
-  fill(220);
-  noStroke();
-  rect(100 - 80, 100, 200, 50, 30);
-  ellipse(140 - 80, 100, 50)
-  ellipse(170 - 80, 90, 50)
-  ellipse(200 - 80, 80, 50)
-  ellipse(230 - 80, 90, 50)
-  ellipse(260 - 80, 100, 50)
+fill(160);
+noStroke();
+rect(100+40+120+120, 100, 200, 50, 30);
+ellipse(140+40+120+120, 100, 50)
+ellipse(170+40+120+120, 90, 50)
+ellipse(200+40+120+120, 80, 50)
+ellipse(230+40+120+120, 90, 50)
+ellipse(260+40+120+120, 100, 50)
 
-  fill(200);
-  noStroke();
-  rect(100 + 40, 100, 200, 50, 30);
-  ellipse(140 + 40, 100, 50)
-  ellipse(170 + 40, 90, 50)
-  ellipse(200 + 40, 80, 50)
-  ellipse(230 + 40, 90, 50)
-  ellipse(260 + 40, 100, 50)
+fill(140);
+noStroke();
+rect(100+40+120+120+120, 100, 200, 50, 30);
+ellipse(140+40+120+120+120, 100, 50)
+ellipse(170+40+120+120+120, 90, 50)
+ellipse(200+40+120+120+120, 80, 50)
+ellipse(230+40+120+120+120, 90, 50)
+ellipse(260+40+120+120+120, 100, 50)
 
-  fill(180);
-  noStroke();
-  rect(100 + 40 + 120, 100, 200, 50, 30);
-  ellipse(140 + 40 + 120, 100, 50)
-  ellipse(170 + 40 + 120, 90, 50)
-  ellipse(200 + 40 + 120, 80, 50)
-  ellipse(230 + 40 + 120, 90, 50)
-  ellipse(260 + 40 + 120, 100, 50)
-
-  fill(160);
-  noStroke();
-  rect(100 + 40 + 120 + 120, 100, 200, 50, 30);
-  ellipse(140 + 40 + 120 + 120, 100, 50)
-  ellipse(170 + 40 + 120 + 120, 90, 50)
-  ellipse(200 + 40 + 120 + 120, 80, 50)
-  ellipse(230 + 40 + 120 + 120, 90, 50)
-  ellipse(260 + 40 + 120 + 120, 100, 50)
-
-  fill(140);
-  noStroke();
-  rect(100 + 40 + 120 + 120 + 120, 100, 200, 50, 30);
-  ellipse(140 + 40 + 120 + 120 + 120, 100, 50)
-  ellipse(170 + 40 + 120 + 120 + 120, 90, 50)
-  ellipse(200 + 40 + 120 + 120 + 120, 80, 50)
-  ellipse(230 + 40 + 120 + 120 + 120, 90, 50)
-  ellipse(260 + 40 + 120 + 120 + 120, 100, 50)
-
-  fill(120);
-  noStroke();
-  rect(100 + 40 + 120 + 120 + 120 + 120, 100, 200, 50, 30);
-  ellipse(140 + 40 + 120 + 120 + 120 + 120, 100, 50)
-  ellipse(170 + 40 + 120 + 120 + 120 + 120, 90, 50)
-  ellipse(200 + 40 + 120 + 120 + 120 + 120, 80, 50)
-  ellipse(230 + 40 + 120 + 120 + 120 + 120, 90, 50)
-  ellipse(260 + 40 + 120 + 120 + 120 + 120, 100, 50)
-
-  fill(100);
-  noStroke();
-  rect(100 + 40 + 120 + 120 + 120 + 120 + 120, 100, 200, 50, 30);
-  ellipse(140 + 40 + 120 + 120 + 120 + 120 + 120, 100, 50)
-  ellipse(170 + 40 + 120 + 120 + 120 + 120 + 120, 90, 50)
-  ellipse(200 + 40 + 120 + 120 + 120 + 120 + 120, 80, 50)
-  ellipse(230 + 40 + 120 + 120 + 120 + 120 + 120, 90, 50)
-  ellipse(260 + 40 + 120 + 120 + 120 + 120 + 120, 100, 50)
-
-  angle += windrad;
+fill(120);
+noStroke();
+rect(100+40+120+120+120+120, 100, 200, 50, 30);
+ellipse(140+40+120+120+120+120, 100, 50)
+ellipse(170+40+120+120+120+120, 90, 50)
+ellipse(200+40+120+120+120+120, 80, 50)
+ellipse(230+40+120+120+120+120, 90, 50)
+ellipse(260+40+120+120+120+120, 100, 50)
 
   // angle += 1;
   // push();
@@ -118,13 +104,15 @@ function draw() {
   // pop();
 
   // angle += 1;
+  angle += windrad;
+
   push();
   translate(width/2, height/2);
   fill(255);
-  textSize(150);
+  textSize(120);
   rotate(angle);
-  text('purple', -150, 0);
-  text('rain', 50, 100);
+  text('purple', -66, 0);
+  text('rain', 0, 110);
   pop();
 
 
@@ -156,7 +144,7 @@ function draw() {
     }
   }
 
-
+}
 
 
 
