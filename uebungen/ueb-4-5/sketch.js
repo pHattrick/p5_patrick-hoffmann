@@ -1,112 +1,117 @@
+let angle = 0;
+
 
 var gui;
 
-var anz = 100
-var anzahlX = Math.sqrt(anz)
-var anzahlY = Math.sqrt(anz)
-var stepsx = 20;
-var stepsy = 20;
-var laenge = 40;
-var breite = 10;
+var anz = 100;
+var AnzahlX = Math.sqrt(anz);
+var AnzahlY = Math.sqrt(anz);
+var stepsx;
+var stepsy;
+var Tropfenlänge = 60;
+var Tropfenbreite = 10;
+var Wind;
+var text;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1300, 920);
 
-  gui = createGui('p5.gui');
-  gui.addGlobals('anz', 'anzahlX', 'anzahlY', 'stepsx', 'stepsy', 'laenge', 'breite');
+  sliderRange(5, 10, 1);
+
+  gui = createGui('Regen');
+  gui.addGlobals('AnzahlX', 'AnzahlY', 'Tropfenlänge', 'Tropfenbreite', 'text','Wind');
   noFill();
-  noLoop();
+  // noLoop();
 }
 
+
 function draw() {
-  background(255);
+  background(15);
   strokeWeight(2);
   stroke(0);
 
+  text('purple', -66, 0);
+  text('rain', 0, 110);
 
+  fill(220);
+  noStroke();
+  rect(100 - 80, 100, 200, 50, 30);
+  ellipse(140 - 80, 100, 50)
+  ellipse(170 - 80, 90, 50)
+  ellipse(200 - 80, 80, 50)
+  ellipse(230 - 80, 90, 50)
+  ellipse(260 - 80, 100, 50)
 
-      fill(220);
-      noStroke();
-      rect(100-80, 100, 200, 50, 30);
-      ellipse(140-80, 100, 50)
-      ellipse(170-80, 90, 50)
-      ellipse(200-80, 80, 50)
-      ellipse(230-80, 90, 50)
-      ellipse(260-80, 100, 50)
+  fill(200);
+  noStroke();
+  rect(100 + 40, 100, 200, 50, 30);
+  ellipse(140 + 40, 100, 50)
+  ellipse(170 + 40, 90, 50)
+  ellipse(200 + 40, 80, 50)
+  ellipse(230 + 40, 90, 50)
+  ellipse(260 + 40, 100, 50)
 
-      fill(200);
-      noStroke();
-      rect(100+40, 100, 200, 50, 30);
-      ellipse(140+40, 100, 50)
-      ellipse(170+40, 90, 50)
-      ellipse(200+40, 80, 50)
-      ellipse(230+40, 90, 50)
-      ellipse(260+40, 100, 50)
+  fill(180);
+  noStroke();
+  rect(100 + 40 + 120, 100, 200, 50, 30);
+  ellipse(140 + 40 + 120, 100, 50)
+  ellipse(170 + 40 + 120, 90, 50)
+  ellipse(200 + 40 + 120, 80, 50)
+  ellipse(230 + 40 + 120, 90, 50)
+  ellipse(260 + 40 + 120, 100, 50)
 
-      fill(180);
-      noStroke();
-      rect(100+40+120, 100, 200, 50, 30);
-      ellipse(140+40+120, 100, 50)
-      ellipse(170+40+120, 90, 50)
-      ellipse(200+40+120, 80, 50)
-      ellipse(230+40+120, 90, 50)
-      ellipse(260+40+120, 100, 50)
+  fill(160);
+  noStroke();
+  rect(100 + 40 + 120 + 120, 100, 200, 50, 30);
+  ellipse(140 + 40 + 120 + 120, 100, 50)
+  ellipse(170 + 40 + 120 + 120, 90, 50)
+  ellipse(200 + 40 + 120 + 120, 80, 50)
+  ellipse(230 + 40 + 120 + 120, 90, 50)
+  ellipse(260 + 40 + 120 + 120, 100, 50)
 
-      fill(160);
-      noStroke();
-      rect(100+40+120+120, 100, 200, 50, 30);
-      ellipse(140+40+120+120, 100, 50)
-      ellipse(170+40+120+120, 90, 50)
-      ellipse(200+40+120+120, 80, 50)
-      ellipse(230+40+120+120, 90, 50)
-      ellipse(260+40+120+120, 100, 50)
+  fill(140);
+  noStroke();
+  rect(100 + 40 + 120 + 120 + 120, 100, 200, 50, 30);
+  ellipse(140 + 40 + 120 + 120 + 120, 100, 50)
+  ellipse(170 + 40 + 120 + 120 + 120, 90, 50)
+  ellipse(200 + 40 + 120 + 120 + 120, 80, 50)
+  ellipse(230 + 40 + 120 + 120 + 120, 90, 50)
+  ellipse(260 + 40 + 120 + 120 + 120, 100, 50)
 
-      fill(140);
-      noStroke();
-      rect(100+40+120+120+120, 100, 200, 50, 30);
-      ellipse(140+40+120+120+120, 100, 50)
-      ellipse(170+40+120+120+120, 90, 50)
-      ellipse(200+40+120+120+120, 80, 50)
-      ellipse(230+40+120+120+120, 90, 50)
-      ellipse(260+40+120+120+120, 100, 50)
+  fill(120);
+  noStroke();
+  rect(100 + 40 + 120 + 120 + 120 + 120, 100, 200, 50, 30);
+  ellipse(140 + 40 + 120 + 120 + 120 + 120, 100, 50)
+  ellipse(170 + 40 + 120 + 120 + 120 + 120, 90, 50)
+  ellipse(200 + 40 + 120 + 120 + 120 + 120, 80, 50)
+  ellipse(230 + 40 + 120 + 120 + 120 + 120, 90, 50)
+  ellipse(260 + 40 + 120 + 120 + 120 + 120, 100, 50)
 
-      fill(120);
-      noStroke();
-      rect(100+40+120+120+120+120, 100, 200, 50, 30);
-      ellipse(140+40+120+120+120+120, 100, 50)
-      ellipse(170+40+120+120+120+120, 90, 50)
-      ellipse(200+40+120+120+120+120, 80, 50)
-      ellipse(230+40+120+120+120+120, 90, 50)
-      ellipse(260+40+120+120+120+120, 100, 50)
-
-
-            // rect(x + 20, y + 40, 10, 40, 30);
-            // rect(x + 40, y + 90, 10, 40, 30);
-
-            // let stepsx = 40;
-            // let stepsy = 100;
-            // for (var x = 20; x < width; x += stepsx) {
-            // for (var y = 120; y < height; y += stepsy) {
-
-            // for (let x = 0; x <= anz; x += 1) {
-            //   rect(stepsx * x + stepsx, stepsx * x + stepsx, breite, laenge,30);
-            // }
-            //
-            // for (let y = 0; y <= anz; y += 1) {
-            //   rect(stepsy * y + stepsy, stepsy * y + stepsy, breite, laenge,30);
-            //   fill(14)
-            // }
+// angle += wind;
 
 
 
-            for (let x = 0; x <= anz; x += 1) {
-              rect(stepsx * x + width/stepsx, stepsx * x + anzahlX, breite, laenge,30);
-            }
+  stepsx = width / AnzahlX;
+  stepsy = height / AnzahlY;
 
-            for (let y = 0; y <= anz; y += 1) {
-              rect(stepsy * y + height/stepsy, stepsy * y + anzahlY, breite, laenge,30);
-              fill(14)
-            }
+  fill('#6a0dad');
+  for (let x = 0; x <= 800; x += stepsx) {
+    for (let y = 0; y <= height; y += stepsy) {
+      // push();
+      // translate(width / 2, height / 2);
+      // point(0, 0);
+      // rotate(angle);
+      rect(50 + x, 150 + y, Tropfenbreite, Tropfenlänge, 30);
+      // pop();
+    }
+  }
 
+  fill('#6a0dad');
+  for (let x = 0; x <= 800; x += stepsx) {
+    for (let y = 0; y <= height; y += stepsy) {
+      rect(100 + x, 200 + y, Tropfenbreite, Tropfenlänge, 30);
+
+    }
+  }
 
 }
