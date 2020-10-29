@@ -20,7 +20,7 @@ var text
 function setup() {
   createCanvas(850, windowHeight);
 
-  let url = 'https://api.weatherstack.com/current?access_key=' + key + '&query=berlin'; //Achtung gratis key unterstützt SSL nicht
+  let url = 'https://api.weatherstack.com/current?access_key=' + key + '&query=istanbul'; //Achtung gratis key unterstützt SSL nicht
   loadJSON(url, gotWeather);
   // rectMode(CENTER);
   angleMode(DEGREES);
