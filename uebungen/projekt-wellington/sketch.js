@@ -26,7 +26,7 @@ var drawFill = true;
 function setup() {
   createCanvas(1300, 920);
 
-  let url = 'https://api.weatherstack.com/current?access_key=' + key + '&query=zurich';
+  let url = 'https://api.weatherstack.com/current?access_key=' + key + '&query=wellington';
   loadJSON(url, gotWeather);
 
   angleMode(DEGREES);
@@ -34,7 +34,7 @@ function setup() {
   sliderRange(5, 10, 1);
 
 //GUI anzeigen
-  gui = createGui('Züriwätter');
+  gui = createGui('Wellingtonwätter');
   gui.addGlobals('drawFill', 'Regentropfenbreite', 'Regentropfenlänge', 'Regenstärke', 'Textgrösse');
   noFill();
 
@@ -128,7 +128,7 @@ function draw() {
   textSize(Textgrösse);
   rotate(angle);
   textAlign(CENTER);
-  text('Züri', 0, 0);
+  text('Wellington', 0, 0);
   text('Wind', 0, 90);
   pop();
 
